@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.signature-pad {
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    position: relative;
+}
+
+#signature-canvas {
+    width: 100%;
+    height: 150px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
