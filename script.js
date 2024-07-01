@@ -1,6 +1,12 @@
+let signaturePad;
+
 function generatePDF() {
     const { jsPDF } = window.jspdf;
     const form = document.getElementById('riskForm');
+    if (!form.checkValidity()) {
+        alert('Please fill out all required fields');
+        return;
+    }
     const formData = new FormData(form);
     const pdf = new jsPDF();
 
@@ -8,10 +14,14 @@ function generatePDF() {
     pdf.text('Risk Assessment Checklist', 10, 10);
 
     let y = 20;
-    formData.forEach((value, key) => {
-        pdf.text(`${key}: ${value}`, 10, y);
+    for (let [key, value] of formData.entries()) {
+        if (key === 'category') {
+            pdf.text(`Category: ${value}`, 10, y);
+        } else {
+            pdf.text(`${key}: ${value}`, 10, y);
+        }
         y += 10;
-    });
+    }
 
     // Add the signature to the PDF
     const canvas = document.getElementById('signature-canvas');
@@ -24,8 +34,6 @@ function generatePDF() {
 function clearSignature() {
     signaturePad.clear();
 }
-
-let signaturePad;
 
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('signature-canvas');
