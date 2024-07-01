@@ -1,6 +1,5 @@
 const CACHE_NAME = 'risk-assessment-cache-v1';
 const urlsToCache = [
-    '/',
     '/index.html',
     '/styles.css',
     '/script.js',
